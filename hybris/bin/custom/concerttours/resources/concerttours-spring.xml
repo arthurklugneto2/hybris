@@ -82,5 +82,13 @@
         <property name="mediaService" ref="mediaService"/>
         <property name="flexibleSearchService" ref="flexibleSearchService"/>
     </bean>
+
+    <bean id="bandDAO" class="concerttours.dao.impl.DefaultBandDAO">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="bandService" class="concerttours.services.impl.DefaultBandService">
+        <property name="bandDAO" ref="bandDAO"/>
+    </bean>
 			
 </beans>
