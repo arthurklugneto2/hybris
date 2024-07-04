@@ -90,5 +90,21 @@
     <bean id="bandService" class="concerttours.services.impl.DefaultBandService">
         <property name="bandDAO" ref="bandDAO"/>
     </bean>
+
+    <bean id="bandFacade" class="concerttours.facades.impl.DefaultBandFacade">
+        <property name="bandService" ref="bandService"/>
+        <property name="bandConverter" ref="bandConverter"/>
+    </bean>
+
+    <bean id="bandPopulator" class="concerttours.populators.BandPopulator"/>
+
+    <bean id="bandConverter" parent="abstractPopulatingConverter">
+        <property name="targetClass" value="concerttours.data.BandData"/>
+        <property name="populators">
+            <list>
+                <ref bean="bandPopulator"/>
+            </list>
+        </property>
+    </bean>
 			
 </beans>
