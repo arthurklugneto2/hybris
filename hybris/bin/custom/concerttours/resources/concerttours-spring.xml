@@ -122,5 +122,7 @@
             </list>
         </property>
     </bean>
+
+    <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
 			
 </beans>

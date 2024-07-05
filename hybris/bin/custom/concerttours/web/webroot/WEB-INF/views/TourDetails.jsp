@@ -54,6 +54,7 @@
                                     <th width="200 | 10%">Venue</th>
                                     <th width="200 | 10%">Tipo</th>
                                     <th width="200 | 10%">Date</th>
+                                    <th width="200 | 10%">Days Until</th>
                                 </tr>
                                 <c:forEach var="concert" items="${tour.concerts}">
                                     <tr>
@@ -62,6 +63,7 @@
                                         <td width="200 | 10%">
                                             <fmt:formatDate pattern="dd MMM yyyy" value="${concert.date}" />
                                         </td>
+                                        <td width="200 | 10%">${concert.countDown}</td>
                                     </tr>
                                 </c:forEach>
                             </table>
