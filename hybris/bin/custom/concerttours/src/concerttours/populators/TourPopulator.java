@@ -33,6 +33,7 @@ public class TourPopulator implements Populator<ProductModel,TourData> {
                     summary.setDate(concert.getDate());
                     summary.setVenue(concert.getVenue());
                     summary.setType(concert.getConcertType() == ConcertType.OPENAIR ? "Outdoors" : "Indoors");
+                    summary.setCountDown( concert.getDaysUntil() );
                     concerts.add(summary);
                 }
             }
